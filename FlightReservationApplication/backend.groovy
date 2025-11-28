@@ -29,9 +29,9 @@ pipeline{
             steps{
                 sh '''
                     cd FlightReservationApplication
-                    docker build -t nikhilsheb/flight-reservation-nikhil:latest .
-                    docker push nikhilsheb/flight-reservation-nikhil:latest
-                    docker rmi nikhilsheb/flight-reservation-nikhil:latest
+                    docker build -t niklearn1414/flight-reservation-nikhil:latest .
+                    docker push niklearn1414/flight-reservation-nikhil:latest
+                    docker rmi niklearn1414/flight-reservation-nikhil:latest
                 '''
             }
         }
