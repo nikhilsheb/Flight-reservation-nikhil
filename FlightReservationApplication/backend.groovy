@@ -6,21 +6,21 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/nikhilsheb/Flight-reservation-nikhil.git'
             }
         }
-        stage('Build'){
-            steps{
+        // stage('Build'){
+        //     steps{
                 
-            }
-        }
-        stage('QA-Test'){
-            steps{
+        //     }
+        // }
+        // stage('QA-Test'){
+        //     steps{
                        
-            }
-        }
-        stage('Docker-build'){
-            steps{
+        //     }
+        // }
+        // stage('Docker-build'){
+        //     steps{
                 
-            }
-        }
+        //     }
+        // }
        
     }
 }
