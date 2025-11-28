@@ -21,14 +21,28 @@ pipeline{
                         cd FlightReservationApplication
                         mvn sonar:sonar  -Dsonar.projectKey=flight-reservation
                     '''
-                       
+                }   
             }
         }
-        // stage('Docker-build'){
-        //     steps{
-                
-        //     }
-        // }
+
+       stage('Docker-build'){
+            steps{
+                sh '''
+                    cd FlightReservationApplication
+                    docker build -t nikhilsheb/Flight-reservation-nikhil:latest .
+                    docker push nikhilsheb/Flight-reservation-nikhil:latest
+                    docker rmi nikhilsheb/Flight-reservation-nikhil:latest
+                '''
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh '''
+                    cd FlightReservationApplication
+                    kubectl apply -f k8s/
+                '''
+            }
+        }
        
     }
 }
